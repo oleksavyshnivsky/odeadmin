@@ -1,0 +1,16 @@
+// ————————————————————————————————————————————————————————————————————————————————
+// Rightside panel
+// ————————————————————————————————————————————————————————————————————————————————
+#aside-panel {
+	@include mainheight;
+	background-color: var(--navbgcolor);
+	position: fixed;
+	right: -300px;
+	top: 55px;
+	transition: .1s;
+	width: 300px;
+
+	&.open {
+		right: 0px;
+	}
+}

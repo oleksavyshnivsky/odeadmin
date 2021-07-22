@@ -1,0 +1,51 @@
+@import "../../node_modules/bootstrap-dark-5/scss/bootstrap-nightshade";
+@import "../vanilla-notify/_vanilla-notify.scss";
+@import "admin/mixins/mainheight";
+@import "common";
+@import "admin/root";
+@import "admin/aside";
+@import "admin/sidebar";
+@import "admin/scrollbar";
+@import "admin/misc";
+
+$fa-font-path:   "../../node_modules/font-awesome/fonts";
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+/* Смугастий блок */
+.divs-striped {
+	--table-bg: #{$table-bg};
+	--accent-bg: #{$table-bg};
+	--striped-color: #{$table-striped-color};
+	--striped-bg: #{$table-striped-bg};
+	--active-color: #{$table-active-color};
+	--active-bg: #{$table-active-bg};
+	--hover-color: #{$table-hover-color};
+	--hover-bg: #{$table-hover-bg};
+}
+
+html.dark .divs-striped {
+    --table-bg: transparent;
+    --accent-bg: transparent;
+    --striped-color: #e1e1e1;
+    --striped-bg: rgba(17, 17, 17, 0.05);
+    --active-color: #e1e1e1;
+    --active-bg: rgba(17, 17, 17, 0.1);
+    --hover-color: #e1e1e1;
+    --hover-bg: rgba(17, 17, 17, 0.075);
+}
+
+.divs-striped {
+	> div:nth-of-type(#{$table-striped-order}) {
+		background-color: var(--striped-bg);
+		color: var(--striped-color);
+	}
+}
+
+.divs-hover {
+  > div:hover {
+    background-color: var(--hover-bg);
+    color: var(--hover-color);
+  }
+}

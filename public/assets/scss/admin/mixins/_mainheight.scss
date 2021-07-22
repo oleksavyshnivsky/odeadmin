@@ -1,0 +1,4 @@
+@mixin mainheight {
+	height: calc(100vh - #{$headerheight});
+	overflow: auto;
+}

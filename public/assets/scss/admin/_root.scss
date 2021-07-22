@@ -1,0 +1,26 @@
+:root {
+	--adminactioncolor: black;
+	--adminactionbgcolor: #89DB33;
+	--navbgcolor: #ddd;
+	--translationcolor: grey;
+}
+
+html.dark {
+	--adminactioncolor: white;
+	--adminactionbgcolor: #89DB33;
+	--navbgcolor: #333;
+	--translationcolor: lightgrey;
+}
+
+html {
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+}
+
+// ————————————————————————————————————————————————————————————————————————————————
+// Header height
+// ————————————————————————————————————————————————————————————————————————————————
+$headerheight: 55px;

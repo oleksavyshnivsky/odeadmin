@@ -1,0 +1,193 @@
+// ————————————————————————————————————————————————————————————————————————————————
+// Reset
+// ————————————————————————————————————————————————————————————————————————————————
+.navbar, .navbar .container-fluid {
+	padding: 0;
+}
+
+// ————————————————————————————————————————————————————————————————————————————————
+// 
+// ————————————————————————————————————————————————————————————————————————————————
+.navbar {
+	background-color: var(--navbgcolor);
+	height: #{$headerheight};
+}
+
+// ————————————————————————————————————————————————————————————————————————————————
+// Logo in a upper left corner
+// ————————————————————————————————————————————————————————————————————————————————
+#logo {
+	background-color: black;
+	color: white;
+	font-size: 1.2rem;
+	text-align: center;
+	width: 200px;
+
+	img {
+		max-height: 47px;
+	}
+
+	@media (max-width: 991px) {
+		width: auto;
+	} 
+}
+
+// ————————————————————————————————————————————————————————————————————————————————
+// Wrapper of Sidebar and Main
+// ————————————————————————————————————————————————————————————————————————————————
+#sidebar-main-wrapper {
+	height: calc(100vh - 55px);
+	margin-top: 55px;
+}
+
+// ————————————————————————————————————————————————————————————————————————————————
+// 
+// ————————————————————————————————————————————————————————————————————————————————
+#sidebar {
+	background-color: var(--bs-gray-dark);
+	left: 0;
+	overflow: auto;
+	padding: 0;
+	position: relative;
+	transition: .1s;
+	width: 200px;
+	z-index: 400;
+
+	@media (max-width: 991px) {
+		position: fixed;
+		left: -200px;
+		transition: .1s;
+	}
+
+	&.changed {
+		position: fixed;
+		left: -200px;
+
+		@media (max-width: 991px) {
+			left: 0;
+		}
+	}
+
+	ul {
+		height: calc(100vh - 90px);
+		overflow: auto;
+		padding-left: 0;
+		width: 100%;
+
+		li {
+			list-style: none;
+		}
+
+		a.nav-link {
+			color: white;
+			padding: 1rem;
+
+			&:hover, &.active {
+				background-color: var(--bs-gray);
+				// color: var(--adminactioncolor);
+				font-weight: bold;
+			}
+		}
+	}
+
+	// ————————————————————————————————————————————————————————————————————————————————
+	// Мінімізована
+	// ————————————————————————————————————————————————————————————————————————————————
+	&.minified {
+		width: 50px;
+		overflow: visible;
+		position: fixed;
+
+		& + #main {
+			margin-left: 50px;
+		}
+
+		.nav-item, .sidebar-dropdown {
+			white-space: nowrap;
+
+			&:hover {
+				overflow: visible;
+				width: 250px;
+			}
+		}
+
+		.sidebar-dropdown .sidebar-dropdown-menu {
+			display: none;
+		}
+
+		.sidebar-dropdown:hover .sidebar-dropdown-menu {
+			background-color: var(--bs-gray-dark);
+			overflow: visible;
+			position: absolute;
+			margin-left: 50px;
+			width: 200px;
+			display: block;
+		}
+	}
+}
+
+#sidebar, #main {
+	@include mainheight;
+}
+
+/*#main, [data-oa-main] {
+	scroll-margin-top: 55px;
+}*/
+
+
+// ————————————————————————————————————————————————————————————————————————————————
+// 
+// ————————————————————————————————————————————————————————————————————————————————
+#sidebar-minifier {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+// ————————————————————————————————————————————————————————————————————————————————
+// Toggle panel visibility 
+// ————————————————————————————————————————————————————————————————————————————————
+.panel-toggler {
+	background-color: var(--navbgcolor);
+	border: none;
+	color: $navbar-light-color;
+	font-size: 1.5rem;
+
+	html.dark & {
+		color: $navbar-light-color-alt;
+	}
+}
+
+
+// ————————————————————————————————————————————————————————————————————————————————
+// Випливне меню
+// ————————————————————————————————————————————————————————————————————————————————
+.sidebar-dropdown-menu {
+	display: none;
+
+	&.open {
+		display: block;
+		transition: .1s;
+	}
+
+	a {
+		display: block;
+		max-width: 200px;
+		padding: 0.5rem 1rem .5rem 1.5rem;
+		word-wrap: break-word;
+
+		&:hover {
+			text-decoration: none;
+			opacity: 0.9;
+		}
+	}
+}
+
+// ————————————————————————————————————————————————————————————————————————————————
+// 
+// ————————————————————————————————————————————————————————————————————————————————
+.nav-item-icon {
+	color: var(--bs-darkgrey);
+	margin-left: .2rem;
+	margin-right: 1.1rem;
+}
